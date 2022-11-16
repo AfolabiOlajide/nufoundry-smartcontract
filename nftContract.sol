@@ -106,7 +106,7 @@ contract NuSeriesFansCollection is ERC721A, Ownable {
     function teamMint() external onlyOwner{
         require(!teamMinted, "Team already minted");
         teamMinted = true;
-        _safeMint(msg.sender, 500);
+        _safeMint(TEAM_WALLET, 500);
 
         totalMinted = totalMinted + 500;
         maxMintAmount = maxMintAmount - 500;
